@@ -10,8 +10,8 @@ This framework provides a plug-and-play processing chain that allows for extensi
 ![Generic Message Processing Chain](proc-chain.png)
 
 ### Stages
-#### Input
-The Input Provider interface is defined in [DataProvider.java](src/main/java/org/darcro/messageproc/input/DataProvider.java). Implementing this allows for the introduction of additional data sources to be input to the processing chain.
+#### DataProviders
+The Data Provider interface is defined in [DataProvider.java](src/main/java/org/darcro/messageproc/input/DataProvider.java). Implementing this allows for the introduction of additional data sources to be input to the processing chain.
 At present, the providers include:
 * A UDP socket server which reads and processes byte[] payloads.
 * A file reader which reads packets stored in a protobuf PacketGroup defined in [storage.proto](src/main/proto/messageproc/storage.proto)
