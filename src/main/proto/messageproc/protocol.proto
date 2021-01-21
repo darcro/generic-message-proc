@@ -1,0 +1,30 @@
+package org.darcro.messageproc.gmp;
+
+option java_package = "org.darcro.messageproc.gmp.proto";
+option java_outer_classname = "GMPMessages";
+
+message Diagnostics {
+	optional string source = 1;
+	optional string comment = 2;
+}
+
+message GMPMessage { 
+	optional int64 timestamp = 1;
+	optional Diagnostics diagnostics = 2;	
+	optional MessageType message_type = 3;
+	
+	optional TextMessage text_message = 10;
+}
+
+
+
+enum MessageType { 
+	UNDEFINED_MESSAGE_TYPE = 0;
+	TEXT_MESSAGE = 1;
+}
+
+
+message TextMessage {
+	optional string author = 1;
+	optional string text_message = 2;
+}

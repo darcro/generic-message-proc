@@ -1,0 +1,19 @@
+package org.darcro.messageproc.storage;
+
+option java_package = "org.darcro.messageproc.storage.proto";
+option java_outer_classname = "StorageProto";
+
+import "messageproc/protocol.proto";
+
+message Packet {
+	optional int64 timestamp = 1;
+	optional bytes payload = 2;
+}
+
+message PacketGroup {
+	repeated Packet packet = 1;
+}
+
+message MessageGroup { 
+	repeated org.darcro.messageproc.gmp.GMPMessage gmp_message = 1;
+}
